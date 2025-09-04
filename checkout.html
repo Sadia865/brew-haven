@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Brew Haven</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+     Navigation 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                Brew Haven
+            </a>
+        </div>
+    </nav>
+
+     Checkout Section 
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h1 class="display-5 fw-bold text-coffee-dark">Checkout</h1>
+                    <p class="lead text-coffee-medium">Complete your order</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                 Order Summary 
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-coffee-light">
+                            <h5 class="fw-bold mb-0 text-coffee-dark">Order Summary</h5>
+                        </div>
+                        <div class="card-body" id="orderSummary">
+                             Order items will be populated by JavaScript 
+                        </div>
+                        <div class="card-footer bg-coffee-light">
+                            <div class="d-flex justify-content-between">
+                                <strong class="text-coffee-dark">Total: $<span id="orderTotal">0.00</span></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 Checkout Form 
+                <div class="col-lg-8">
+                    <form id="checkoutForm" class="needs-validation" novalidate>
+                         Customer Information 
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-coffee-light">
+                                <h5 class="fw-bold mb-0 text-coffee-dark">Customer Information</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                        <div class="invalid-feedback">Please provide a valid first name.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                        <div class="invalid-feedback">Please provide a valid last name.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">Please provide a valid email.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="(555) 123-4567" oninput="formatPhone(this)" required>
+                                    <div class="invalid-feedback">Please provide a valid phone number.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                         Shipping Address 
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-coffee-light">
+                                <h5 class="fw-bold mb-0 text-coffee-dark">Shipping Address</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Street Address</label>
+                                    <input type="text" class="form-control" id="address" required>
+                                    <div class="invalid-feedback">Please provide a valid address.</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city" required>
+                                        <div class="invalid-feedback">Please provide a valid city.</div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="state" class="form-label">State</label>
+                                        <select class="form-select" id="state" required>
+                                            <option value="">Choose...</option>
+                                            <option value="AL">Alabama</option>
+                                            <option value="CA">California</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="NY">New York</option>
+                                            <option value="TX">Texas</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a valid state.</div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="zip" class="form-label">Zip Code</label>
+                                        <input type="text" class="form-control" id="zip" required>
+                                        <div class="invalid-feedback">Please provide a valid zip code.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         Payment Method 
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-coffee-light">
+                                <h5 class="fw-bold mb-0 text-coffee-dark">Payment Method</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="credit" checked>
+                                        <label class="form-check-label" for="creditCard">
+                                            <i class="fas fa-credit-card me-2"></i>Credit Card
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" value="paypal">
+                                        <label class="form-check-label" for="paypal">
+                                            <i class="fab fa-paypal me-2"></i>PayPal
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div id="creditCardFields">
+                                    <div class="mb-3">
+                                        <label for="cardNumber" class="form-label">Card Number</label>
+                                        <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="expiryDate" class="form-label">Expiry Date</label>
+                                            <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="cvv" class="form-label">CVV</label>
+                                            <input type="text" class="form-control" id="cvv" placeholder="123">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="shop.html" class="btn btn-outline-coffee-primary me-md-2">Back to Shop</a>
+                            <button type="submit" class="btn btn-coffee-primary btn-lg">
+                                <i class="fas fa-lock me-2"></i>Place Order
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Footer 
+    <footer class="bg-coffee-dark text-coffee-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                        Brew Haven
+                    </h5>
+                    <p class="text-coffee-light">Your destination for premium coffee experiences.</p>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Contact Info</h6>
+                            <p class="text-coffee-light mb-1">
+                                <i class="fas fa-phone me-2"></i>(555) 123-BREW
+                            </p>
+                            <p class="text-coffee-light">
+                                <i class="fas fa-envelope me-2"></i>hello@brewhaven.com
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Secure Checkout</h6>
+                            <p class="text-coffee-light">
+                                <i class="fas fa-shield-alt me-2"></i>SSL Encrypted
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Populate order summary on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            populateOrderSummary();
+            
+            // Handle payment method change
+            document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const creditCardFields = document.getElementById('creditCardFields');
+                    if (this.value === 'credit') {
+                        creditCardFields.style.display = 'block';
+                    } else {
+                        creditCardFields.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        function populateOrderSummary() {
+            const orderSummary = document.getElementById('orderSummary');
+            const orderTotal = document.getElementById('orderTotal');
+            
+            if (cart.length === 0) {
+                orderSummary.innerHTML = '<p class="text-coffee-medium">No items in cart</p>';
+                orderTotal.textContent = '0.00';
+                return;
+            }
+            
+            let total = 0;
+            orderSummary.innerHTML = cart.map(item => {
+                total += item.price * item.quantity;
+                return `
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <strong class="text-coffee-dark">${item.name}</strong>
+                            <br>
+                            <small class="text-coffee-medium">Qty: ${item.quantity}</small>
+                        </div>
+                        <span class="text-coffee-primary">$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `;
+            }).join('');
+            
+            orderTotal.textContent = total.toFixed(2);
+        }
+
+        // Handle form submission
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm('checkoutForm')) {
+                // Store order data
+                const orderData = {
+                    items: cart,
+                    total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+                    customer: {
+                        firstName: document.getElementById('firstName').value,
+                        lastName: document.getElementById('lastName').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value
+                    },
+                    shipping: {
+                        address: document.getElementById('address').value,
+                        city: document.getElementById('city').value,
+                        state: document.getElementById('state').value,
+                        zip: document.getElementById('zip').value
+                    },
+                    paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value,
+                    orderNumber: 'BH' + Date.now(),
+                    orderDate: new Date().toLocaleDateString()
+                };
+                
+                localStorage.setItem('brewhaven-order', JSON.stringify(orderData));
+                window.location.href = 'order-confirmation.html';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "brew-haven-coffee-shop",
+  "version": "1.0.0",
+  "description": "A complete e-commerce coffee shop website built with HTML, CSS, JavaScript, and Bootstrap",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "build": "echo 'No build process needed for static HTML'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": ["coffee", "e-commerce", "html", "css", "javascript", "bootstrap", "responsive"],
+  "author": "Brew Haven Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brewhaven/coffee-shop-website"
+  },
+  "homepage": "https://brewhaven.github.io/coffee-shop-website"
+}

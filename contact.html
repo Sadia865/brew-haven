@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Brew Haven</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                Brew Haven
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-coffee-primary position-relative" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-coffee-primary" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-coffee-light py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1 class="display-4 fw-bold text-coffee-dark mb-3">Contact Us</h1>
+                    <p class="lead text-coffee-medium">We'd love to hear from you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                 Contact Form 
+                <div class="col-lg-8 mb-5">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-coffee-light">
+                            <h5 class="fw-bold mb-0 text-coffee-dark">Send us a Message</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm" class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="contactName" required>
+                                        <div class="invalid-feedback">Please provide your name.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="contactEmail" required>
+                                        <div class="invalid-feedback">Please provide a valid email.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label">Subject</label>
+                                    <select class="form-select" id="contactSubject" required>
+                                        <option value="">Choose a subject...</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="order">Order Support</option>
+                                        <option value="wholesale">Wholesale Opportunities</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a subject.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">Message</label>
+                                    <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                                    <div class="invalid-feedback">Please provide a message.</div>
+                                </div>
+                                <button type="submit" class="btn btn-coffee-primary">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-coffee-light">
+                            <h5 class="fw-bold mb-0 text-coffee-dark">Get in Touch</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h6 class="fw-bold text-coffee-dark mb-2">
+                                    <i class="fas fa-map-marker-alt text-coffee-primary me-2"></i>
+                                    Address
+                                </h6>
+                                <p class="text-coffee-medium mb-0">
+                                    123 Coffee Street<br>
+                                    Bean City, BC 12345<br>
+                                    United States
+                                </p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold text-coffee-dark mb-2">
+                                    <i class="fas fa-phone text-coffee-primary me-2"></i>
+                                    Phone
+                                </h6>
+                                <p class="text-coffee-medium mb-0">(555) 123-BREW</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold text-coffee-dark mb-2">
+                                    <i class="fas fa-envelope text-coffee-primary me-2"></i>
+                                    Email
+                                </h6>
+                                <p class="text-coffee-medium mb-0">hello@brewhaven.com</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold text-coffee-dark mb-2">
+                                    <i class="fas fa-clock text-coffee-primary me-2"></i>
+                                    Hours
+                                </h6>
+                                <p class="text-coffee-medium mb-1">Monday - Friday: 6:00 AM - 8:00 PM</p>
+                                <p class="text-coffee-medium mb-1">Saturday: 7:00 AM - 9:00 PM</p>
+                                <p class="text-coffee-medium mb-0">Sunday: 7:00 AM - 7:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-coffee-light">
+                            <h5 class="fw-bold mb-0 text-coffee-dark">Follow Us</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-outline-coffee-primary">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-coffee-primary">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-coffee-primary">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-coffee-primary">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-coffee-cream">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="fw-bold text-coffee-dark mb-4 text-center">Find Us</h2>
+                    <div class="ratio ratio-21x9">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890123!2d-74.0059413!3d40.7127753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjEuNCJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-3">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-coffee-dark text-coffee-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                        Brew Haven
+                    </h5>
+                    <p class="text-coffee-light">Your destination for premium coffee experiences. From bean to cup, we're passionate about delivering exceptional quality.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-coffee-light text-decoration-none">Home</a></li>
+                        <li><a href="menu.html" class="text-coffee-light text-decoration-none">Menu</a></li>
+                        <li><a href="shop.html" class="text-coffee-light text-decoration-none">Shop</a></li>
+                        <li><a href="about.html" class="text-coffee-light text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <p class="text-coffee-light mb-1">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        123 Coffee Street, Bean City, BC 12345
+                    </p>
+                    <p class="text-coffee-light mb-1">
+                        <i class="fas fa-phone me-2"></i>
+                        (555) 123-BREW
+                    </p>
+                    <p class="text-coffee-light">
+                        <i class="fas fa-envelope me-2"></i>
+                        hello@brewhaven.com
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-coffee-medium">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-coffee-light mb-0">&copy; 2024 Brew Haven. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5 class="fw-bold mb-0">Shopping Cart</h5>
+            <button class="btn-close" onclick="toggleCart()"></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <div class="empty-cart text-center py-5">
+                <i class="fas fa-shopping-cart fa-3x text-coffee-medium mb-3"></i>
+                <p class="text-coffee-medium">Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total mb-3">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="btn btn-coffee-primary w-100" onclick="goToCheckout()">Checkout</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm('contactForm')) {
+                // Show success message
+                showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
+                
+                // Reset form
+                this.reset();
+                this.classList.remove('was-validated');
+            } else {
+                this.classList.add('was-validated');
+            }
+        });
+    </script>
+</body>
+</html>

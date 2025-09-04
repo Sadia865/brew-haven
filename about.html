@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Brew Haven</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                Brew Haven
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-coffee-primary position-relative" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-coffee-primary" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-coffee-light py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1 class="display-4 fw-bold text-coffee-dark mb-3">Our Story</h1>
+                    <p class="lead text-coffee-medium">Discover the passion behind every cup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold text-coffee-dark mb-4">The Beginning</h2>
+                    <p class="text-coffee-medium mb-4">
+                        Brew Haven was born from a simple dream: to bring the world's finest coffee experiences to your doorstep. 
+                        Founded in 2018 by coffee enthusiasts Maria and James Rodriguez, our journey began with a single mission - 
+                        to source, roast, and serve exceptional coffee that tells a story.
+                    </p>
+                    <p class="text-coffee-medium">
+                        What started as a small neighborhood café has grown into a beloved coffee destination, but our commitment 
+                        to quality and community remains unchanged. Every bean we select, every roast we perfect, and every cup 
+                        we serve is a testament to our passion for coffee excellence.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="pexels-rivero-442880176-28747356.jpg" alt="Founders roasting coffee" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-coffee-cream">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold text-coffee-dark mb-3">Our Values</h2>
+                    <p class="lead text-coffee-medium">What drives us every day</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-leaf fa-3x text-coffee-primary"></i>
+                        </div>
+                        <h5 class="fw-bold text-coffee-dark mb-3">Sustainability</h5>
+                        <p class="text-coffee-medium">We partner with farms that practice sustainable agriculture, ensuring our coffee is good for you and the planet.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-handshake fa-3x text-coffee-primary"></i>
+                        </div>
+                        <h5 class="fw-bold text-coffee-dark mb-3">Fair Trade</h5>
+                        <p class="text-coffee-medium">Every purchase supports fair wages and better working conditions for coffee farmers around the world.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-award fa-3x text-coffee-primary"></i>
+                        </div>
+                        <h5 class="fw-bold text-coffee-dark mb-3">Quality</h5>
+                        <p class="text-coffee-medium">From bean selection to the final cup, we maintain the highest standards of quality in everything we do.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <h2 class="fw-bold text-coffee-dark mb-4">Our Roasting Process</h2>
+                    <p class="text-coffee-medium mb-4">
+                        At Brew Haven, roasting is both an art and a science. Our master roasters carefully monitor each batch, 
+                        adjusting temperature and timing to bring out the unique characteristics of every origin.
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-thermometer-half text-coffee-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold text-coffee-dark mb-1">Temperature Control</h6>
+                                    <small class="text-coffee-medium">Precise heat management</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-clock text-coffee-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold text-coffee-dark mb-1">Perfect Timing</h6>
+                                    <small class="text-coffee-medium">Optimal roast duration</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-eye text-coffee-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold text-coffee-dark mb-1">Visual Inspection</h6>
+                                    <small class="text-coffee-medium">Color and texture analysis</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-nose text-coffee-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold text-coffee-dark mb-1">Aroma Testing</h6>
+                                    <small class="text-coffee-medium">Scent profile evaluation</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <img src="bam.avif" alt="Coffee roasting process" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-coffee-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold text-coffee-dark mb-3">Meet Our Team</h2>
+                    <p class="lead text-coffee-medium">The passionate people behind Brew Haven</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <img src="p2.avif" class="card-img-top" alt="Maria Rodriguez">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Maria Rodriguez</h5>
+                            <p class="text-coffee-primary mb-2">Co-Founder & Head Roaster</p>
+                            <p class="card-text text-coffee-medium">With 15 years of experience in coffee roasting, Maria brings expertise and passion to every batch.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <img src="p1.avif" class="card-img-top" alt="James Rodriguez">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">James Rodriguez</h5>
+                            <p class="text-coffee-primary mb-2">Co-Founder & Operations Manager</p>
+                            <p class="card-text text-coffee-medium">James oversees our sourcing and ensures every bean meets our high standards for quality and sustainability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <img src="p3.avif" class="card-img-top" alt="Sarah Chen">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Sarah Chen</h5>
+                            <p class="text-coffee-primary mb-2">Head Barista & Training Manager</p>
+                            <p class="card-text text-coffee-medium">Sarah leads our barista team and ensures every cup served meets our exceptional standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-coffee-dark text-coffee-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                        Brew Haven
+                    </h5>
+                    <p class="text-coffee-light">Your destination for premium coffee experiences. From bean to cup, we're passionate about delivering exceptional quality.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-coffee-light text-decoration-none">Home</a></li>
+                        <li><a href="menu.html" class="text-coffee-light text-decoration-none">Menu</a></li>
+                        <li><a href="shop.html" class="text-coffee-light text-decoration-none">Shop</a></li>
+                        <li><a href="about.html" class="text-coffee-light text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <p class="text-coffee-light mb-1">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        123 Coffee Street, Bean City, BC 12345
+                    </p>
+                    <p class="text-coffee-light mb-1">
+                        <i class="fas fa-phone me-2"></i>
+                        (555) 123-BREW
+                    </p>
+                    <p class="text-coffee-light">
+                        <i class="fas fa-envelope me-2"></i>
+                        hello@brewhaven.com
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-coffee-medium">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-coffee-light mb-0">&copy; 2024 Brew Haven. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5 class="fw-bold mb-0">Shopping Cart</h5>
+            <button class="btn-close" onclick="toggleCart()"></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <div class="empty-cart text-center py-5">
+                <i class="fas fa-shopping-cart fa-3x text-coffee-medium mb-3"></i>
+                <p class="text-coffee-medium">Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total mb-3">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="btn btn-coffee-primary w-100" onclick="goToCheckout()">Checkout</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

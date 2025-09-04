@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Brew Haven</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+     
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                Brew Haven
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-coffee-primary position-relative" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-coffee-primary" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+     
+    <section class="bg-coffee-light py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1 class="display-4 fw-bold text-coffee-dark mb-3">Our Menu</h1>
+                    <p class="lead text-coffee-medium">Discover our carefully crafted selection of premium coffees and treats</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-coffee-dark fw-bold mb-4">
+                        <i class="fas fa-mug-hot text-coffee-primary me-2"></i>
+                        Hot Coffee
+                    </h2>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="i2.avif" class="card-img-top" alt="House Blend">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">House Blend</h5>
+                            <p class="card-text text-coffee-medium">Our signature blend with notes of chocolate and caramel. Medium roast with a smooth finish.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$4.50</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="i4.avif" class="card-img-top" alt="Ethiopian Single Origin">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Ethiopian Single Origin</h5>
+                            <p class="card-text text-coffee-medium">Bright and floral with hints of citrus and berry. Light to medium roast showcasing origin flavors.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$5.25</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="i3.avif" class="card-img-top" alt="French Roast">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">French Roast</h5>
+                            <p class="card-text text-coffee-medium">Bold and intense dark roast with smoky undertones. Perfect for those who love strong coffee.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$4.75</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-coffee-dark fw-bold mb-4">
+                        <i class="fas fa-glass-whiskey text-coffee-primary me-2"></i>
+                        Cold Brew
+                    </h2>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="caranel.avif" class="card-img-top" alt="Classic Cold Brew">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Classic Cold Brew</h5>
+                            <p class="card-text text-coffee-medium">Smooth and refreshing, steeped for 12 hours. Naturally sweet with low acidity.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$4.25</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="vam.jpg" class="card-img-top" alt="Vanilla Cold Brew">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Vanilla Cold Brew</h5>
+                            <p class="card-text text-coffee-medium">Our classic cold brew infused with natural vanilla. Creamy and aromatic.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$4.75</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="nitro.webp" class="card-img-top" alt="Nitro Cold Brew">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Nitro Cold Brew</h5>
+                            <p class="card-text text-coffee-medium">Cold brew infused with nitrogen for a creamy, cascading effect. Rich and velvety texture.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$5.50</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-coffee-dark fw-bold mb-4">
+                        <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                        Espresso
+                    </h2>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="es2.jpg" class="card-img-top" alt="Single Espresso">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Single Espresso</h5>
+                            <p class="card-text text-coffee-medium">Pure espresso shot with rich crema. The foundation of all our espresso drinks.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$2.50</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="j2.avif" class="card-img-top" alt="Cappuccino">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Cappuccino</h5>
+                            <p class="card-text text-coffee-medium">Perfect balance of espresso, steamed milk, and foam. Topped with beautiful latte art.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$4.25</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="latte.webp" class="card-img-top" alt="Latte">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Latte</h5>
+                            <p class="card-text text-coffee-medium">Smooth espresso with steamed milk and a light layer of foam. Creamy and comforting.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$4.50</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-coffee-dark fw-bold mb-4">
+                        <i class="fas fa-cookie-bite text-coffee-primary me-2"></i>
+                        Pastries
+                    </h2>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="butter.jpeg" class="card-img-top" alt="Butter Croissant">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Butter Croissant</h5>
+                            <p class="card-text text-coffee-medium">Flaky, buttery pastry baked fresh daily. Perfect with your morning coffee.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$3.25</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="muffin.webp" class="card-img-top" alt="Blueberry Muffin">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Blueberry Muffin</h5>
+                            <p class="card-text text-coffee-medium">Moist muffin packed with fresh blueberries. Made with organic ingredients.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$3.75</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <img src="cok2.jpg" class="card-img-top" alt="Chocolate Chip Cookie">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-coffee-dark">Chocolate Chip Cookie</h5>
+                            <p class="card-text text-coffee-medium">Classic cookie with premium chocolate chips. Crispy edges, chewy center.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-coffee-primary mb-0">$2.50</span>
+                                <button class="btn btn-coffee-primary btn-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-coffee-dark text-coffee-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                        Brew Haven
+                    </h5>
+                    <p class="text-coffee-light">Your destination for premium coffee experiences. From bean to cup, we're passionate about delivering exceptional quality.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-coffee-light text-decoration-none">Home</a></li>
+                        <li><a href="menu.html" class="text-coffee-light text-decoration-none">Menu</a></li>
+                        <li><a href="shop.html" class="text-coffee-light text-decoration-none">Shop</a></li>
+                        <li><a href="about.html" class="text-coffee-light text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <p class="text-coffee-light mb-1">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        123 Coffee Street, Bean City, BC 12345
+                    </p>
+                    <p class="text-coffee-light mb-1">
+                        <i class="fas fa-phone me-2"></i>
+                        (555) 123-BREW
+                    </p>
+                    <p class="text-coffee-light">
+                        <i class="fas fa-envelope me-2"></i>
+                        hello@brewhaven.com
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-coffee-light fs-4"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-coffee-medium">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-coffee-light mb-0">&copy; 2024 Brew Haven. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5 class="fw-bold mb-0">Shopping Cart</h5>
+            <button class="btn-close" onclick="toggleCart()"></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <div class="empty-cart text-center py-5">
+                <i class="fas fa-shopping-cart fa-3x text-coffee-medium mb-3"></i>
+                <p class="text-coffee-medium">Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total mb-3">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="btn btn-coffee-primary w-100" onclick="goToCheckout()">Checkout</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

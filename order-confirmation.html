@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Brew Haven</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                Brew Haven
+            </a>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <div class="mb-4">
+                            <i class="fas fa-check-circle fa-5x text-success"></i>
+                        </div>
+                        <h1 class="display-5 fw-bold text-coffee-dark mb-3">Order Confirmed!</h1>
+                        <p class="lead text-coffee-medium">Thank you for your order. We'll start preparing it right away.</p>
+                    </div>
+
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-coffee-light">
+                            <h5 class="fw-bold mb-0 text-coffee-dark">Order Details</h5>
+                        </div>
+                        <div class="card-body" id="orderDetails">
+                             Order details will be populated by JavaScript 
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm mb-4">
+                                <div class="card-header bg-coffee-light">
+                                    <h6 class="fw-bold mb-0 text-coffee-dark">Shipping Information</h6>
+                                </div>
+                                <div class="card-body" id="shippingInfo">
+                                     Shipping info will be populated by JavaScript 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm mb-4">
+                                <div class="card-header bg-coffee-light">
+                                    <h6 class="fw-bold mb-0 text-coffee-dark">What's Next?</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <i class="fas fa-envelope text-coffee-primary me-2"></i>
+                                            You'll receive an email confirmation shortly
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="fas fa-box text-coffee-primary me-2"></i>
+                                            Your order will be processed within 1-2 business days
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="fas fa-shipping-fast text-coffee-primary me-2"></i>
+                                            Estimated delivery: 3-5 business days
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-phone text-coffee-primary me-2"></i>
+                                            Questions? Call us at (555) 123-BREW
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="index.html" class="btn btn-coffee-primary btn-lg me-3">Continue Shopping</a>
+                        <a href="shop.html" class="btn btn-outline-coffee-primary btn-lg">Browse Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-coffee-dark text-coffee-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-coffee text-coffee-primary me-2"></i>
+                        Brew Haven
+                    </h5>
+                    <p class="text-coffee-light">Your destination for premium coffee experiences.</p>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Contact Info</h6>
+                            <p class="text-coffee-light mb-1">
+                                <i class="fas fa-phone me-2"></i>(555) 123-BREW
+                            </p>
+                            <p class="text-coffee-light">
+                                <i class="fas fa-envelope me-2"></i>hello@brewhaven.com
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Customer Support</h6>
+                            <p class="text-coffee-light">
+                                <i class="fas fa-headset me-2"></i>24/7 Support Available
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderData = JSON.parse(localStorage.getItem('brewhaven-order'));
+            
+            if (!orderData) {
+                window.location.href = 'shop.html';
+                return;
+            }
+            
+            // Populate order details
+            const orderDetails = document.getElementById('orderDetails');
+            orderDetails.innerHTML = `
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <strong>Order Number:</strong> ${orderData.orderNumber}
+                    </div>
+                    <div class="col-sm-6">
+                        <strong>Order Date:</strong> ${orderData.orderDate}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <strong>Items Ordered:</strong>
+                </div>
+                ${orderData.items.map(item => `
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <div>
+                            <strong>${item.name}</strong><br>
+                            <small class="text-muted">Quantity: ${item.quantity}</small>
+                        </div>
+                        <span class="text-coffee-primary">$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `).join('')}
+                <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                    <strong class="h5 mb-0">Total: $${orderData.total.toFixed(2)}</strong>
+                </div>
+            `;
+            
+            // Populate shipping info
+            const shippingInfo = document.getElementById('shippingInfo');
+            shippingInfo.innerHTML = `
+                <p class="mb-1"><strong>${orderData.customer.firstName} ${orderData.customer.lastName}</strong></p>
+                <p class="mb-1">${orderData.shipping.address}</p>
+                <p class="mb-1">${orderData.shipping.city}, ${orderData.shipping.state} ${orderData.shipping.zip}</p>
+                <p class="mb-1">Email: ${orderData.customer.email}</p>
+                <p class="mb-0">Phone: ${orderData.customer.phone}</p>
+            `;
+            
+            // Clear cart and order data
+            localStorage.removeItem('brewhaven-cart');
+            localStorage.removeItem('brewhaven-order');
+            cart = [];
+        });
+    </script>
+</body>
+</html>
